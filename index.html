@@ -1,13 +1,616 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG60 - Créez votre boutique en ligne</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #0d8aff;
+            --secondary: #ff9100;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --success: #48bb78;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0b76e5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e68200;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card {
+            border-left: 4px solid var(--primary);
+        }
+        
+        .feature-icon {
+            background-color: rgba(13, 138, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--primary), #00c2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+        }
+        
+        .logo {
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .hero-image {
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .text-secondary {
+            color: var(--secondary);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-2xl logo">
+                    <svg width="80" height="40" viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Store Icon -->
+                        <rect x="0" y="10" width="20" height="20" rx="2" fill="#0d8aff" />
+                        <rect x="8" y="5" width="4" height="5" fill="#0d8aff" />
+                        <rect x="3" y="18" width="14" height="2" fill="#fff" />
+                        <rect x="5" y="22" width="10" height="2" fill="#fff" />
+                        
+                        <!-- Text -->
+                        <text x="26" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0d8aff">IG</text>
+                        <text x="50" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff9100">60</text>
+                        <text x="70" y="27" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">.com</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-10">
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                <a href="#features" class="text-gray-700 hover:text-primary transition-colors">Fonctionnalités</a>
+                <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors">Tarifs</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="px-4 py-2 rounded-md text-gray-700 border border-gray-300 hover:bg-gray-50 transition-colors">Connexion</a>
+                <a href="#" class="btn-primary px-4 py-2 rounded-md font-medium">Créer Votre Boutique</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-700"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="flex flex-col w-full md:w-1/2 justify-center items-start py-8">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    <span class="text-gradient">Créez votre boutique</span> en ligne sans coder
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Démarrez votre activité de vente en ligne sans connaissances en programmation ou en design en créant votre propre site e-Commerce professionnel.
+                </p>
+                <a href="#" class="btn-primary px-8 py-3 rounded-md font-medium text-lg">Commencer Gratuitement</a>
+            </div>
+            <div class="w-full md:w-1/2 py-8 text-center">
+                <svg class="hero-image mx-auto" width="600" height="420" viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background -->
+                    <rect x="0" y="0" width="600" height="420" rx="8" fill="#f8fafc" />
+                    
+                    <!-- Computer Screen -->
+                    <rect x="50" y="60" width="320" height="240" rx="5" fill="#fff" stroke="#e2e8f0" stroke-width="2" />
+                    <rect x="70" y="90" width="280" height="180" rx="2" fill="#f1f5f9" />
+                    
+                    <!-- Dashboard Elements -->
+                    <rect x="90" y="110" width="100" height="20" rx="3" fill="#0d8aff" opacity="0.8" />
+                    <rect x="90" y="140" width="240" height="8" rx="2" fill="#cbd5e1" />
+                    <rect x="90" y="160" width="160" height="8" rx="2" fill="#cbd5e1" />
+                    <rect x="90" y="180" width="200" height="8" rx="2" fill="#cbd5e1" />
+                    <rect x="90" y="200" width="180" height="8" rx="2" fill="#cbd5e1" />
+                    <rect x="90" y="220" width="220" height="8" rx="2" fill="#cbd5e1" />
+                    
+                    <!-- Chart Elements -->
+                    <rect x="260" y="160" width="70" height="60" rx="3" fill="#0d8aff" opacity="0.7" />
+                    <rect x="230" y="180" width="20" height="40" rx="3" fill="#0d8aff" opacity="0.5" />
+                    <rect x="200" y="200" width="20" height="20" rx="3" fill="#0d8aff" opacity="0.3" />
+                    
+                    <!-- Keyboard -->
+                    <rect x="100" y="310" width="220" height="20" rx="5" fill="#e2e8f0" />
+                    
+                    <!-- Computer Stand -->
+                    <rect x="195" y="300" width="30" height="10" rx="1" fill="#cbd5e1" />
+                    <rect x="200" y="310" width="20" height="30" rx="1" fill="#94a3b8" />
+                    
+                    <!-- Person -->
+                    <circle cx="450" cy="120" r="40" fill="#fde68a" />
+                    <rect x="410" y="170" width="80" height="120" rx="10" fill="#d97706" />
+                    <rect x="390" y="180" width="20" height="80" rx="10" fill="#fde68a" />
+                    <rect x="490" y="180" width="20" height="80" rx="10" fill="#fde68a" />
+                    
+                    <!-- Shopping Boxes -->
+                    <rect x="400" y="300" width="60" height="60" rx="5" fill="#fecaca" />
+                    <rect x="410" y="310" width="40" height="40" rx="3" fill="#ef4444" />
+                    <rect x="470" y="280" width="50" height="50" rx="5" fill="#bfdbfe" />
+                    <rect x="480" y="290" width="30" height="30" rx="3" fill="#3b82f6" />
+                    <rect x="530" y="320" width="40" height="40" rx="5" fill="#d8b4fe" />
+                    <rect x="535" y="325" width="30" height="30" rx="3" fill="#8b5cf6" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card">
+                    <p class="text-gray-500 text-sm">Boutiques créées</p>
+                    <p class="text-3xl font-bold text-gray-800">2745+</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card">
+                    <p class="text-gray-500 text-sm">Ventes totales</p>
+                    <p class="text-3xl font-bold text-gray-800">10,811 DT</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card">
+                    <p class="text-gray-500 text-sm">Visiteurs</p>
+                    <p class="text-3xl font-bold text-gray-800">8877+</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card">
+                    <p class="text-gray-500 text-sm">Taux de conversion</p>
+                    <p class="text-3xl font-bold text-gray-800">2.6%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Fonctionnalités Principales</h2>
+                <p class="text-gray-600 mt-2">Tout ce dont vous avez besoin pour réussir en ligne</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white rounded-lg p-8 shadow-sm">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-store text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Boutique Personnalisable</h3>
+                    <p class="text-gray-600">Créez une boutique qui reflète votre marque avec nos thèmes et options de personnalisation.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-lg p-8 shadow-sm">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Intégration de Livraison</h3>
+                    <p class="text-gray-600">Connectez votre boutique avec les services de livraison tunisiens pour une gestion fluide.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-lg p-8 shadow-sm">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-credit-card text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Paiements Électroniques</h3>
+                    <p class="text-gray-600">Acceptez facilement les paiements en ligne avec nos intégrations de passerelles de paiement.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-lg p-8 shadow-sm">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-bar text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Statistiques Détaillées</h3>
+                    <p class="text-gray-600">Suivez vos performances et prenez des décisions éclairées avec nos tableaux de bord analytiques.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-lg p-8 shadow-sm">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-box text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Gestion des Commandes</h3>
+                    <p class="text-gray-600">Gérez efficacement vos commandes, de la création à la livraison et aux retours.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-lg p-8 shadow-sm">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Optimisation SEO</h3>
+                    <p class="text-gray-600">Améliorez votre visibilité en ligne avec nos outils d'optimisation pour les moteurs de recherche.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Intégrez votre société de livraison</h2>
+                <p class="text-gray-600 mt-2">Connectez votre boutique avec les services de livraison locaux</p>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl w-full">
+                    <div class="text-center mb-8">
+                        <svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background shape -->
+                            <rect x="0" y="0" width="300" height="100" rx="5" fill="#f8fafc" />
+                            
+                            <!-- "FIRST DELIVERY" Logo -->
+                            <text x="150" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#4ade80">FIRST</text>
+                            <text x="150" y="75" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1e293b">DELIVERY</text>
+                            
+                            <!-- Decorative Elements -->
+                            <path d="M50,50 L80,50" stroke="#4ade80" stroke-width="4" stroke-linecap="round" />
+                            <path d="M220,50 L250,50" stroke="#4ade80" stroke-width="4" stroke-linecap="round" />
+                            
+                            <!-- Truck Icon -->
+                            <rect x="100" y="30" width="35" height="20" rx="3" fill="#4ade80" />
+                            <rect x="135" y="35" width="15" height="15" rx="2" fill="#4ade80" />
+                            <circle cx="110" cy="55" r="5" fill="#1e293b" />
+                            <circle cx="130" cy="55" r="5" fill="#1e293b" />
+                            
+                            <!-- Package Icon -->
+                            <rect x="165" y="35" width="20" height="20" rx="2" fill="#fbbf24" />
+                            <line x1="165" y1="45" x2="185" y2="45" stroke="#1e293b" stroke-width="1" />
+                            <line x1="175" y1="35" x2="175" y2="55" stroke="#1e293b" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <p class="text-center text-gray-600 mb-6">
+                        Synchronisez automatiquement vos commandes avec les principaux services de livraison en Tunisie pour une gestion sans effort
+                    </p>
+                    <div class="text-center">
+                        <a href="#" class="btn-primary px-6 py-2 rounded-md font-medium">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Comparez vos performances</h2>
+                <p class="text-gray-600 mt-2">Suivez votre progression par rapport aux autres boutiques</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold mb-4 text-center">Score des ventes</h3>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded-full bg-gray-200">
+                            <div style="width: 59%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-yellow-400 to-green-500"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-3xl font-bold">59%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold mb-4 text-center">Score des visiteurs</h3>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded-full bg-gray-200">
+                            <div style="width: 81%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-yellow-400 to-green-500"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-3xl font-bold">81%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold mb-4 text-center">Score de conversion</h3>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded-full bg-gray-200">
+                            <div style="width: 36%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-red-400 to-yellow-500"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-3xl font-bold">36%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payments Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Acceptez les paiements électroniques</h2>
+                <p class="text-gray-600 mt-2">Plusieurs options de paiement pour vos clients</p>
+            </div>
+            
+            <div class="flex justify-center space-x-8">
+                <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="20" width="100" height="40" rx="4" fill="#0066b2" />
+                    <rect x="30" y="25" width="60" height="30" rx="2" fill="#fff" />
+                    <path d="M45,40 L55,40 L57,35 L59,45 L61,35 L63,45 L65,35 L67,40 L75,40" stroke="#0066b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                </svg>
+                
+                <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="45" cy="40" r="20" fill="#eb001b" />
+                    <circle cx="75" cy="40" r="20" fill="#f79e1b" />
+                    <path d="M60,25 A20,20 0 0,0 60,55 A20,20 0 0,0 60,25" fill="#ff5f00" />
+                </svg>
+                
+                <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="20" width="100" height="40" rx="4" fill="#ffaa33" />
+                    <text x="60" y="48" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#fff">E-DINAR</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Tarifs simples et transparents</h2>
+                <p class="text-gray-600 mt-2">Commencez gratuitement, évoluez selon vos besoins</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="bg-primary py-6 px-8 text-white text-center">
+                    <h3 class="text-xl font-bold">1 JETON / COMMANDE</h3>
+                    <p>Prix du Jeton à partir de 0.500 TND</p>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Produits illimités</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Commandes illimitées</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Clients illimités</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Utilisateurs illimités</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Gestion de stock</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Gestion des commandes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Exportation de commandes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Service clients 24/7</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Statistiques détaillées</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Personnalisation des thèmes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Optimisation SEO</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>SSL gratuit</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Liaison avec Facebook Ads</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Paiements électroniques</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Notifications des ventes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Dropshipping</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#" class="btn-primary px-8 py-3 rounded-md font-medium">Créez votre boutique gratuitement</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-blue-400 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Prêt à lancer votre boutique en ligne?</h2>
+            <p class="text-xl mb-8 max-w-xl mx-auto">Rejoignez plus de 2,700 entrepreneurs tunisiens qui ont déjà commencé leur aventure e-commerce avec IG60.</p>
+            <a href="#" class="bg-white text-primary px-8 py-3 rounded-md font-medium text-lg hover:bg-gray-100 transition-colors">Commencer Gratuitement</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl logo mb-4">
+                        <span class="text-primary">IG</span><span class="text-secondary">60</span><span class="text-gray-400 text-sm">.com</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        IG60 est une plateforme de création de site e-commerce qui aide les entreprises à créer un site professionnel et à réussir en ligne.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Termes et conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contactez-nous</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Entreprise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">À propos de nous</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Fonctionnalités</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tarifs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Nous contacter</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">Tunis, Tunisie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">contact@ig60.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">+216 XX XXX XXX</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 IG60.COM. Tous droits réservés.</p>
+                <div class="mt-4 md:mt-0">
+                    <svg width="200" height="30" viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Visa -->
+                        <rect x="10" y="5" width="40" height="20" rx="2" fill="#0066b2" />
+                        <path d="M20,18 L25,18 L26,12 L28,18 L33,18" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        
+                        <!-- Mastercard -->
+                        <circle cx="65" cy="15" r="8" fill="#eb001b" />
+                        <circle cx="75" cy="15" r="8" fill="#f79e1b" />
+                        <path d="M70,9 A8,8 0 0,0 70,21 A8,8 0 0,0 70,9" fill="#ff5f00" />
+                        
+                        <!-- E-Dinar -->
+                        <rect x="95" y="5" width="40" height="20" rx="2" fill="#ffaa33" />
+                        <text x="115" y="18" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#fff">E-DINAR</text>
+                        
+                        <!-- Flousi -->
+                        <rect x="145" y="5" width="40" height="20" rx="2" fill="#4ade80" />
+                        <text x="165" y="18" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#fff">FLOUSI</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.querySelector('.md\\:flex');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'p-4', 'shadow-md', 'z-50');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'p-4', 'shadow-md', 'z-50');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
 </html>
