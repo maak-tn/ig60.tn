@@ -11,7 +11,7 @@ export default function HeroSection() {
           <p className="text-lg text-gray-600 mb-8">
             Démarrez votre activité de vente en ligne sans connaissances en programmation ou en design en créant votre propre site e-Commerce professionnel.
           </p>
-          <Link href="#" className="btn-primary px-8 py-3 rounded-md font-medium text-lg">
+          <Link href="https://dashboard.ig60.com/register" className="btn-primary px-8 py-3 rounded-md font-medium text-lg">
             Commencer Gratuitement
           </Link>
         </div>

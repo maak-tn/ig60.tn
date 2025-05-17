@@ -1,4 +1,3 @@
-import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
 
@@ -44,7 +43,89 @@ function Footer() {
     ];
 
     return (
-        <footer className='bg-black text-white py-8 flex flex-col gap-4 items-center'>
+        <footer className='flex flex-col items-center gap-4 py-8 text-white bg-black'>
+            <section className="py-12 text-white">
+                <div className="container px-6 mx-auto">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+                        <div>
+                            <div className="mb-4 text-2xl logo">
+                                <span className="text-primary">IG</span><span className="text-secondary">60</span><span className="text-sm text-gray-400">.com</span>
+                            </div>
+                            <p className="text-sm text-gray-400">
+                                IG60 est une plateforme de création de site e-commerce qui aide les entreprises à créer un site professionnel et à réussir en ligne.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="mb-4 text-lg font-semibold">Support</h3>
+                            <ul className="space-y-2">
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">FAQ</Link></li>
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">Politique de confidentialité</Link></li>
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">Termes et conditions</Link></li>
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">Contactez-nous</Link></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="mb-4 text-lg font-semibold">Entreprise</h3>
+                            <ul className="space-y-2">
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">À propos de nous</Link></li>
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">Fonctionnalités</Link></li>
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">Tarifs</Link></li>
+                                <li><Link href="#" className="text-gray-400 transition-colors hover:text-white">Actualités</Link></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="mb-4 text-lg font-semibold">Nous contacter</h3>
+                            <ul className="space-y-2">
+                                <li className="flex items-start">
+                                    <i className="mt-1 mr-2 text-gray-400 fas fa-map-marker-alt"></i>
+                                    <span className="text-gray-400">Tunis, Tunisie</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <i className="mt-1 mr-2 text-gray-400 fas fa-envelope"></i>
+                                    <span className="text-gray-400">contact@ig60.com</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <i className="mt-1 mr-2 text-gray-400 fas fa-phone"></i>
+                                    <span className="text-gray-400">+216 XX XXX XXX</span>
+                                </li>
+                            </ul>
+                            <div className="flex mt-4 space-x-4">
+                                <Link href="#" className="text-gray-400 transition-colors hover:text-white"><i className="fab fa-facebook-f"></i></Link>
+                                <Link href="#" className="text-gray-400 transition-colors hover:text-white"><i className="fab fa-twitter"></i></Link>
+                                <Link href="#" className="text-gray-400 transition-colors hover:text-white"><i className="fab fa-instagram"></i></Link>
+                                <Link href="#" className="text-gray-400 transition-colors hover:text-white"><i className="fab fa-linkedin-in"></i></Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col items-center justify-between pt-8 mt-12 border-t border-gray-800 md:flex-row">
+                        <p className="text-sm text-gray-400">© 2025 IG60.COM. Tous droits réservés.</p>
+                        <div className="mt-4 md:mt-0">
+                            <svg width="200" height="30" viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+                                {/* Visa */}
+                                <rect x="10" y="5" width="40" height="20" rx="2" fill="#0066b2" />
+                                <path d="M20,18 L25,18 L26,12 L28,18 L33,18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+
+                                {/* Mastercard */}
+                                <circle cx="65" cy="15" r="8" fill="#eb001b" />
+                                <circle cx="75" cy="15" r="8" fill="#f79e1b" />
+                                <path d="M70,9 A8,8 0 0,0 70,21 A8,8 0 0,0 70,9" fill="#ff5f00" />
+
+                                {/* E-Dinar */}
+                                <rect x="95" y="5" width="40" height="20" rx="2" fill="#ffaa33" />
+                                <text x="115" y="18" fontFamily="Arial, sans-serif" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#fff">E-DINAR</text>
+
+                                {/* Flousi */}
+                                <rect x="145" y="5" width="40" height="20" rx="2" fill="#4ade80" />
+                                <text x="165" y="18" fontFamily="Arial, sans-serif" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#fff">FLOUSI</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section >
             <div className="flex justify-center mt-8 space-x-6">
                 {
                     SOCIALS.map((item, index: number) => (
@@ -57,7 +138,7 @@ function Footer() {
             <p className="py-8 text-base leading-6 text-center text-white">
                 © {new Date().getFullYear()} <Link href={'https://maak-corp.tn'}><strong>MAAK CORP</strong></Link>, All rights reserved.
             </p>
-        </footer>
+        </footer >
     )
 }
 

@@ -1,5 +1,4 @@
 import ComparisonSection from '@/components/ComparisonSection'
-import CTASection from '@/components/CTASection'
 import FeaturesSection from '@/components/FeaturesSection'
 import HeroSection from '@/components/HeroSection'
 import IntegrationSection from '@/components/IntegrationSection'
@@ -25,7 +24,6 @@ function page() {
             <ComparisonSection />
             <PaymentsSection />
             <PricingSection />
-            <CTASection />
         </div>
     )
 }

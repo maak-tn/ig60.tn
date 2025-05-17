@@ -26,25 +26,25 @@ export default function PricingSection() {
 
   return (
     <section id="pricing" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="container px-6 mx-auto">
+        <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold">Tarifs simples et transparents</h2>
-          <p className="text-gray-600 mt-2">Commencez gratuitement, évoluez selon vos besoins</p>
+          <p className="mt-2 text-gray-600">Commencez gratuitement, évoluez selon vos besoins</p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="bg-primary py-6 px-8 text-white text-center">
+        <div className="max-w-4xl mx-auto overflow-hidden bg-white shadow-md rounded-xl">
+          <div className="px-8 py-6 text-center text-white bg-primary">
             <h3 className="text-xl font-bold">1 JETON / COMMANDE</h3>
             <p>Prix du Jeton à partir de 0.500 TND</p>
           </div>
 
           <div className="p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <ul className="space-y-3">
                   {leftFeatures.map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <i className="fas fa-check text-green-500 mr-2"></i>
+                      <i className="mr-2 text-green-500 fas fa-check"></i>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -54,7 +54,7 @@ export default function PricingSection() {
                 <ul className="space-y-3">
                   {rightFeatures.map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <i className="fas fa-check text-green-500 mr-2"></i>
+                      <i className="mr-2 text-green-500 fas fa-check"></i>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -63,13 +63,13 @@ export default function PricingSection() {
             </div>
 
             <div className="mt-8 text-center">
-              <Link href="#" className="btn-primary px-8 py-3 rounded-md font-medium">
+              <Link href="https://dashboard.ig60.com/register" className="px-8 py-3 font-medium rounded-md btn-primary">
                 Créez votre boutique gratuitement
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

@@ -33,10 +33,10 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex space-x-4">
-          <Link href="#" className="px-4 py-2 rounded-md text-gray-700 border border-gray-300 hover:bg-gray-50 transition-colors">
+          <Link href="https://dashboard.ig60.com/login" className="px-4 py-2 rounded-md text-gray-700 border border-gray-300 hover:bg-gray-50 transition-colors">
             Connexion
           </Link>
-          <Link href="#" className="btn-primary px-4 py-2 rounded-md font-medium">
+          <Link href="https://dashboard.ig60.com/register" className="btn-primary px-4 py-2 rounded-md font-medium">
             Créer Votre Boutique
           </Link>
         </div>
