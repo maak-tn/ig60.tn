@@ -1,38 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --navbar-height: 60px;
-  --max-width: 1200px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --primary: #0d8aff;
+  --secondary: #ff9100;
+  --dark: #1a202c;
+  --light: #f7fafc;
+  --success: #48bb78;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
 }
 
-.hiddenScroll {
-  scrollbar-width: none;
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: all 0.3s ease;
 }
 
-.hiddenScroll::-webkit-scrollbar {
-  /* Safari and Chrome */
-  display: none;
+.btn-primary:hover {
+  background-color: #0b76e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #e68200;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card {
+  border-left: 4px solid var(--primary);
+}
+
+.feature-icon {
+  background-color: rgba(13, 138, 255, 0.1);
+  color: var(--primary);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary), #00c2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero-image {
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
 }

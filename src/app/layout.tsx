@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
+import Head from "next/head";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     title: "IG60 - By MAAK CORP",
@@ -82,10 +84,18 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
-            </head>
-            <body className="antialiased text-black">
-                {children}
+            <Head>
+                <title>IG60 - Créez votre boutique en ligne</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta charSet="UTF-8" />
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+            </Head>
+            <body className="antialiased text-black font-poppins">
+                <Navbar />
+                <main>
+                    {children}
+                </main>
                 <Footer />
             </body>
         </html>

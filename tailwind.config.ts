@@ -8,14 +8,21 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        border: '#303436'
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
       },
-      height: {
-        sahredSection: 'calc(100vh - var(--navbar-height))'
-      }
+      colors: {
+        'primary': '#0d8aff',
+        'secondary': '#ff9100',
+        'dark': '#1a202c',
+        'light': '#f7fafc',
+        'success': '#48bb78',
+      },
+      boxShadow: {
+        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      },
     },
   },
   plugins: [],
